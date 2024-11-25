@@ -24,15 +24,22 @@ public class Main {
   }
 
   private static void testRental() {
-    Main._rental = new Rental(Main._movie, 25);
+    Main._rental = new Rental(Main._movie, 7);
     System.out
         .println("Movie: " + Main._rental.getMovie().getTitle() + " - Days rented: " + Main._rental.getDaysRented());
   }
 
   private static void testCustomer() {
+    Movie movie = new Movie("Filminho", 0);
+    Rental rental = new Rental(movie, 10);
+
+    System.out
+        .println("Movie: " + rental.getMovie().getTitle() + " - Days rented: " + rental.getDaysRented());
+
     Main._customer = new Customer("Jão");
 
     Main._customer.addRental(Main._rental);
+    Main._customer.addRental(rental);
 
     System.out.println(Main._customer.statement());
   }
