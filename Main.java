@@ -32,5 +32,6 @@ public class Main {
     Main._customer.addRental(rental);
 
     System.out.println(Main._customer.statement());
+    System.out.println(Main._customer.htmlStatement());
   }
 }
