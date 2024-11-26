@@ -21,23 +21,10 @@ public class Rental {
   }
 
   public double getCharge() {
-    double thisAmount = 0;
-
-    thisAmount = this.getMovie().getCharge(this._daysRented);
-
-    return thisAmount;
+    return this.getMovie().getCharge(this._daysRented);
   }
 
   public int getFrequentRenterPoints() {
-    int frequentRenterPoints = 0;
-
-    frequentRenterPoints++;
-
-    // add bonus for a two day new release rental
-    if ((this.getMovie().getPriceCode() == Movie.NEW_RELEASE) && this.getDaysRented() > 1) {
-      frequentRenterPoints++;
-    }
-
-    return frequentRenterPoints;
+    return this.getMovie().getFrequentRenterPoints(this._daysRented);
   }
 }
